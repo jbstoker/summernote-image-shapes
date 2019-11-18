@@ -16,12 +16,18 @@
         tooltipShapeOptions: ['Responsive', 'Rounded', 'Circle', 'Thumbnail', 'None']
       }
     },
+    'nl-NL': {
+      imageShapes: {
+        tooltip: 'Afbeelding vormen',
+        tooltipShapeOptions: ['Responsive', 'Afgerond', 'Rond', 'Thumbnail', 'Geen']
+      }
+    },
   });
   $.extend($.summernote.options, {
     imageShapes: {
       icon: '<i class="note-icon-picture"/>',
       /* Must keep the same order as in lang.imageAttributes.tooltipShapeOptions */
-      shapes: ['img-responsive', 'img-rounded', 'img-circle', 'img-thumbnail', '']
+      shapes: ['img-responsive', 'img-rounded', 'img-circle', 'img-thumbnail', 'img-polaroid', '']
     }
   });
   $.extend($.summernote.plugins, {
@@ -35,6 +41,7 @@
           ui.button({
             className: 'dropdown-toggle',
             contents: options.imageShapes.icon + '&nbsp;&nbsp;<span class="caret"></span>',
+            container: 'body',
             tooltip: lang.imageShapes.tooltip,
             data: {
               toggle: 'dropdown'
